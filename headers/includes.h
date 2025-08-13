@@ -10,6 +10,7 @@
 #include <map>
 #include <random>
 #include <string>
+#include <memory>
 
 #include <windows.h>
 #include <ntstatus.h>
