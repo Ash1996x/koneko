@@ -167,14 +167,14 @@ typedef struct {
 } StackFrame,
 * PStackFrame;
 
-typedef struct _FILE_STANDARD_INFORMATION {
+typedef struct _CUSTOM_FILE_STANDARD_INFORMATION {
     LARGE_INTEGER AllocationSize;       // The file allocation size in bytes. Usually, this value is a multiple of the sector or cluster size of the underlying physical device.
     LARGE_INTEGER EndOfFile;            // The end of file location as a byte offset.
     ULONG NumberOfLinks;                // The number of hard links to the file.
     BOOLEAN DeletePending;              // The delete pending status. TRUE indicates that a file deletion has been requested.
     BOOLEAN Directory;                  // The file directory status. TRUE indicates the file object represents a directory.
-} FILE_STANDARD_INFORMATION,
-* PFILE_STANDARD_INFORMATION;
+} CUSTOM_FILE_STANDARD_INFORMATION,
+* PCUSTOM_FILE_STANDARD_INFORMATION;
 
 typedef struct _FILE_RENAME_INFORMATION_EX {
     ULONG Flags;
@@ -184,10 +184,10 @@ typedef struct _FILE_RENAME_INFORMATION_EX {
 } FILE_RENAME_INFORMATION_EX,
 * PFILE_RENAME_INFORMATION_EX;
 
-typedef struct _FILE_DISPOSITION_INFORMATION {
+typedef struct _CUSTOM_FILE_DISPOSITION_INFORMATION {
     BOOLEAN DeleteFile;
-} FILE_DISPOSITION_INFORMATION,
-* PFILE_DISPOSITION_INFORMATION;
+} CUSTOM_FILE_DISPOSITION_INFORMATION,
+* PCUSTOM_FILE_DISPOSITION_INFORMATION;
 
 typedef struct _KSYSTEM_TIME {
     ULONG LowPart;

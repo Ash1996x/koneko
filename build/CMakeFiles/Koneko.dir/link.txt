@@ -1,0 +1,3 @@
+/usr/bin/cmake -E rm -f CMakeFiles/Koneko.dir/objects.a
+/usr/bin/x86_64-w64-mingw32-ar qc CMakeFiles/Koneko.dir/objects.a @CMakeFiles/Koneko.dir/objects1.rsp
+/usr/bin/x86_64-w64-mingw32-g++ -D_WIN32_WINNT=0x0601 -DWIN32_LEAN_AND_MEAN -static-libgcc -static-libstdc++ -mwindows -Wl,--whole-archive CMakeFiles/Koneko.dir/objects.a -Wl,--no-whole-archive -o bin/Koneko.exe -Wl,--out-implib,lib/libKoneko.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/Koneko.dir/linkLibs.rsp
