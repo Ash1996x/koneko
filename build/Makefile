@@ -129,29 +129,125 @@ Koneko/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/build
 .PHONY : Koneko/fast
 
-main_minimal.obj: main_minimal.cpp.obj
-.PHONY : main_minimal.obj
+callstackspoof.obj: callstackspoof.cpp.obj
+.PHONY : callstackspoof.obj
 
 # target to build an object file
-main_minimal.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/main_minimal.cpp.obj
-.PHONY : main_minimal.cpp.obj
+callstackspoof.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/callstackspoof.cpp.obj
+.PHONY : callstackspoof.cpp.obj
 
-main_minimal.i: main_minimal.cpp.i
-.PHONY : main_minimal.i
+callstackspoof.i: callstackspoof.cpp.i
+.PHONY : callstackspoof.i
 
 # target to preprocess a source file
-main_minimal.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/main_minimal.cpp.i
-.PHONY : main_minimal.cpp.i
+callstackspoof.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/callstackspoof.cpp.i
+.PHONY : callstackspoof.cpp.i
 
-main_minimal.s: main_minimal.cpp.s
-.PHONY : main_minimal.s
+callstackspoof.s: callstackspoof.cpp.s
+.PHONY : callstackspoof.s
 
 # target to generate assembly for a file
-main_minimal.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/main_minimal.cpp.s
-.PHONY : main_minimal.cpp.s
+callstackspoof.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/callstackspoof.cpp.s
+.PHONY : callstackspoof.cpp.s
+
+main.obj: main.cpp.obj
+.PHONY : main.obj
+
+# target to build an object file
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+sleep.obj: sleep.cpp.obj
+.PHONY : sleep.obj
+
+# target to build an object file
+sleep.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/sleep.cpp.obj
+.PHONY : sleep.cpp.obj
+
+sleep.i: sleep.cpp.i
+.PHONY : sleep.i
+
+# target to preprocess a source file
+sleep.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/sleep.cpp.i
+.PHONY : sleep.cpp.i
+
+sleep.s: sleep.cpp.s
+.PHONY : sleep.s
+
+# target to generate assembly for a file
+sleep.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/sleep.cpp.s
+.PHONY : sleep.cpp.s
+
+stubs.obj: stubs.cpp.obj
+.PHONY : stubs.obj
+
+# target to build an object file
+stubs.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/stubs.cpp.obj
+.PHONY : stubs.cpp.obj
+
+stubs.i: stubs.cpp.i
+.PHONY : stubs.i
+
+# target to preprocess a source file
+stubs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/stubs.cpp.i
+.PHONY : stubs.cpp.i
+
+stubs.s: stubs.cpp.s
+.PHONY : stubs.s
+
+# target to generate assembly for a file
+stubs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/stubs.cpp.s
+.PHONY : stubs.cpp.s
+
+syscalls.obj: syscalls.cpp.obj
+.PHONY : syscalls.obj
+
+# target to build an object file
+syscalls.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/syscalls.cpp.obj
+.PHONY : syscalls.cpp.obj
+
+syscalls.i: syscalls.cpp.i
+.PHONY : syscalls.i
+
+# target to preprocess a source file
+syscalls.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/syscalls.cpp.i
+.PHONY : syscalls.cpp.i
+
+syscalls.s: syscalls.cpp.s
+.PHONY : syscalls.s
+
+# target to generate assembly for a file
+syscalls.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/syscalls.cpp.s
+.PHONY : syscalls.cpp.s
 
 # Help Target
 help:
@@ -162,9 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Koneko"
-	@echo "... main_minimal.obj"
-	@echo "... main_minimal.i"
-	@echo "... main_minimal.s"
+	@echo "... callstackspoof.obj"
+	@echo "... callstackspoof.i"
+	@echo "... callstackspoof.s"
+	@echo "... main.obj"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... sleep.obj"
+	@echo "... sleep.i"
+	@echo "... sleep.s"
+	@echo "... stubs.obj"
+	@echo "... stubs.i"
+	@echo "... stubs.s"
+	@echo "... syscalls.obj"
+	@echo "... syscalls.i"
+	@echo "... syscalls.s"
 .PHONY : help
 
 

@@ -85,12 +85,12 @@ clean: CMakeFiles/Koneko.dir/clean
 CMakeFiles/Koneko.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=1,2 "Built target Koneko"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target Koneko"
 .PHONY : CMakeFiles/Koneko.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Koneko.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Koneko.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/build/CMakeFiles 0
 .PHONY : CMakeFiles/Koneko.dir/rule
@@ -102,7 +102,7 @@ Koneko: CMakeFiles/Koneko.dir/rule
 # codegen rule for target.
 CMakeFiles/Koneko.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Koneko.dir/build.make CMakeFiles/Koneko.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=1,2 "Finished codegen for target Koneko"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/workspace/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target Koneko"
 .PHONY : CMakeFiles/Koneko.dir/codegen
 
 # clean rule for target.

@@ -3,6 +3,11 @@
 #ifndef INCLUDES_H
 #define INCLUDES_H
 
+#include <windows.h>
+#include <ntstatus.h>
+#include <winternl.h>
+#include <intrin.h>
+
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -12,10 +17,6 @@
 #include <string>
 #include <memory>
 
-#include <windows.h>
-#include <ntstatus.h>
-#include <winternl.h>
-#include <intrin.h>
 #include <definitions.h>
 #include <enums.h>
 #include <structs.h>

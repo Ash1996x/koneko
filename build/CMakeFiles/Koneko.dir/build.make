@@ -72,34 +72,102 @@ include CMakeFiles/Koneko.dir/flags.make
 CMakeFiles/Koneko.dir/codegen:
 .PHONY : CMakeFiles/Koneko.dir/codegen
 
-CMakeFiles/Koneko.dir/main_minimal.cpp.obj: CMakeFiles/Koneko.dir/flags.make
-CMakeFiles/Koneko.dir/main_minimal.cpp.obj: CMakeFiles/Koneko.dir/includes_CXX.rsp
-CMakeFiles/Koneko.dir/main_minimal.cpp.obj: /workspace/main_minimal.cpp
-CMakeFiles/Koneko.dir/main_minimal.cpp.obj: CMakeFiles/Koneko.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Koneko.dir/main_minimal.cpp.obj"
-	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Koneko.dir/main_minimal.cpp.obj -MF CMakeFiles/Koneko.dir/main_minimal.cpp.obj.d -o CMakeFiles/Koneko.dir/main_minimal.cpp.obj -c /workspace/main_minimal.cpp
+CMakeFiles/Koneko.dir/main.cpp.obj: CMakeFiles/Koneko.dir/flags.make
+CMakeFiles/Koneko.dir/main.cpp.obj: CMakeFiles/Koneko.dir/includes_CXX.rsp
+CMakeFiles/Koneko.dir/main.cpp.obj: /workspace/main.cpp
+CMakeFiles/Koneko.dir/main.cpp.obj: CMakeFiles/Koneko.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Koneko.dir/main.cpp.obj"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Koneko.dir/main.cpp.obj -MF CMakeFiles/Koneko.dir/main.cpp.obj.d -o CMakeFiles/Koneko.dir/main.cpp.obj -c /workspace/main.cpp
 
-CMakeFiles/Koneko.dir/main_minimal.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Koneko.dir/main_minimal.cpp.i"
-	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/main_minimal.cpp > CMakeFiles/Koneko.dir/main_minimal.cpp.i
+CMakeFiles/Koneko.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Koneko.dir/main.cpp.i"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/main.cpp > CMakeFiles/Koneko.dir/main.cpp.i
 
-CMakeFiles/Koneko.dir/main_minimal.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Koneko.dir/main_minimal.cpp.s"
-	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/main_minimal.cpp -o CMakeFiles/Koneko.dir/main_minimal.cpp.s
+CMakeFiles/Koneko.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Koneko.dir/main.cpp.s"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/main.cpp -o CMakeFiles/Koneko.dir/main.cpp.s
+
+CMakeFiles/Koneko.dir/callstackspoof.cpp.obj: CMakeFiles/Koneko.dir/flags.make
+CMakeFiles/Koneko.dir/callstackspoof.cpp.obj: CMakeFiles/Koneko.dir/includes_CXX.rsp
+CMakeFiles/Koneko.dir/callstackspoof.cpp.obj: /workspace/callstackspoof.cpp
+CMakeFiles/Koneko.dir/callstackspoof.cpp.obj: CMakeFiles/Koneko.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Koneko.dir/callstackspoof.cpp.obj"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Koneko.dir/callstackspoof.cpp.obj -MF CMakeFiles/Koneko.dir/callstackspoof.cpp.obj.d -o CMakeFiles/Koneko.dir/callstackspoof.cpp.obj -c /workspace/callstackspoof.cpp
+
+CMakeFiles/Koneko.dir/callstackspoof.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Koneko.dir/callstackspoof.cpp.i"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/callstackspoof.cpp > CMakeFiles/Koneko.dir/callstackspoof.cpp.i
+
+CMakeFiles/Koneko.dir/callstackspoof.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Koneko.dir/callstackspoof.cpp.s"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/callstackspoof.cpp -o CMakeFiles/Koneko.dir/callstackspoof.cpp.s
+
+CMakeFiles/Koneko.dir/sleep.cpp.obj: CMakeFiles/Koneko.dir/flags.make
+CMakeFiles/Koneko.dir/sleep.cpp.obj: CMakeFiles/Koneko.dir/includes_CXX.rsp
+CMakeFiles/Koneko.dir/sleep.cpp.obj: /workspace/sleep.cpp
+CMakeFiles/Koneko.dir/sleep.cpp.obj: CMakeFiles/Koneko.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Koneko.dir/sleep.cpp.obj"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Koneko.dir/sleep.cpp.obj -MF CMakeFiles/Koneko.dir/sleep.cpp.obj.d -o CMakeFiles/Koneko.dir/sleep.cpp.obj -c /workspace/sleep.cpp
+
+CMakeFiles/Koneko.dir/sleep.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Koneko.dir/sleep.cpp.i"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/sleep.cpp > CMakeFiles/Koneko.dir/sleep.cpp.i
+
+CMakeFiles/Koneko.dir/sleep.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Koneko.dir/sleep.cpp.s"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/sleep.cpp -o CMakeFiles/Koneko.dir/sleep.cpp.s
+
+CMakeFiles/Koneko.dir/syscalls.cpp.obj: CMakeFiles/Koneko.dir/flags.make
+CMakeFiles/Koneko.dir/syscalls.cpp.obj: CMakeFiles/Koneko.dir/includes_CXX.rsp
+CMakeFiles/Koneko.dir/syscalls.cpp.obj: /workspace/syscalls.cpp
+CMakeFiles/Koneko.dir/syscalls.cpp.obj: CMakeFiles/Koneko.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Koneko.dir/syscalls.cpp.obj"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Koneko.dir/syscalls.cpp.obj -MF CMakeFiles/Koneko.dir/syscalls.cpp.obj.d -o CMakeFiles/Koneko.dir/syscalls.cpp.obj -c /workspace/syscalls.cpp
+
+CMakeFiles/Koneko.dir/syscalls.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Koneko.dir/syscalls.cpp.i"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/syscalls.cpp > CMakeFiles/Koneko.dir/syscalls.cpp.i
+
+CMakeFiles/Koneko.dir/syscalls.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Koneko.dir/syscalls.cpp.s"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/syscalls.cpp -o CMakeFiles/Koneko.dir/syscalls.cpp.s
+
+CMakeFiles/Koneko.dir/stubs.cpp.obj: CMakeFiles/Koneko.dir/flags.make
+CMakeFiles/Koneko.dir/stubs.cpp.obj: CMakeFiles/Koneko.dir/includes_CXX.rsp
+CMakeFiles/Koneko.dir/stubs.cpp.obj: /workspace/stubs.cpp
+CMakeFiles/Koneko.dir/stubs.cpp.obj: CMakeFiles/Koneko.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Koneko.dir/stubs.cpp.obj"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Koneko.dir/stubs.cpp.obj -MF CMakeFiles/Koneko.dir/stubs.cpp.obj.d -o CMakeFiles/Koneko.dir/stubs.cpp.obj -c /workspace/stubs.cpp
+
+CMakeFiles/Koneko.dir/stubs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Koneko.dir/stubs.cpp.i"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/stubs.cpp > CMakeFiles/Koneko.dir/stubs.cpp.i
+
+CMakeFiles/Koneko.dir/stubs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Koneko.dir/stubs.cpp.s"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/stubs.cpp -o CMakeFiles/Koneko.dir/stubs.cpp.s
 
 # Object files for target Koneko
 Koneko_OBJECTS = \
-"CMakeFiles/Koneko.dir/main_minimal.cpp.obj"
+"CMakeFiles/Koneko.dir/main.cpp.obj" \
+"CMakeFiles/Koneko.dir/callstackspoof.cpp.obj" \
+"CMakeFiles/Koneko.dir/sleep.cpp.obj" \
+"CMakeFiles/Koneko.dir/syscalls.cpp.obj" \
+"CMakeFiles/Koneko.dir/stubs.cpp.obj"
 
 # External object files for target Koneko
 Koneko_EXTERNAL_OBJECTS =
 
-bin/Koneko.exe: CMakeFiles/Koneko.dir/main_minimal.cpp.obj
+bin/Koneko.exe: CMakeFiles/Koneko.dir/main.cpp.obj
+bin/Koneko.exe: CMakeFiles/Koneko.dir/callstackspoof.cpp.obj
+bin/Koneko.exe: CMakeFiles/Koneko.dir/sleep.cpp.obj
+bin/Koneko.exe: CMakeFiles/Koneko.dir/syscalls.cpp.obj
+bin/Koneko.exe: CMakeFiles/Koneko.dir/stubs.cpp.obj
 bin/Koneko.exe: CMakeFiles/Koneko.dir/build.make
 bin/Koneko.exe: CMakeFiles/Koneko.dir/linkLibs.rsp
 bin/Koneko.exe: CMakeFiles/Koneko.dir/objects1.rsp
 bin/Koneko.exe: CMakeFiles/Koneko.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/Koneko.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/workspace/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin/Koneko.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Koneko.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

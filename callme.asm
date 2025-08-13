@@ -1,14 +1,10 @@
-.data
+/* GNU Assembler version of callme.asm */
+/* Converted from MASM syntax */
 
-extern dwSSN:dword
-extern qwJMP:qword
+.global CallMe
+.type CallMe, @function
 
-.code
-
-CallMe proc
-	mov r10, rcx
-	mov eax, dwSSN
-	jmp qwJMP
-CallMe endp
-
-end
+CallMe:
+    mov %rcx, %r10
+    mov dwSSN(%rip), %eax
+    jmp *qwJMP(%rip)

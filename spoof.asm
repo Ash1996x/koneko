@@ -1,136 +1,136 @@
-.code
+@ GNU Assembler version of spoof.asm
+@ Converted from MASM syntax
 
-;   A function can be called like so
-;   
-;   Spoof(arg1, arg2, arg3, arg4, &param, function, (PVOID)0);
-;   
-;   Param is a struct containing some necessary information for the call to have fake frames added.
-;   The 6th argument is a pointer to the function to execute
-;   The 7th argument specifies the number of args to pass to the stack. It has to be at an 8 byte size.
+.global Spoof
+.type Spoof, @function
 
-Spoof PROC
-    pop    rax                         ; Real return address in rax
+@   A function can be called like so
+@   
+@   Spoof(arg1, arg2, arg3, arg4, &param, function, (PVOID)0);
+@   
+@   Param is a struct containing some necessary information for the call to have fake frames added.
+@   The 6th argument is a pointer to the function to execute
+@   The 7th argument specifies the number of args to pass to the stack. It has to be at an 8 byte size.
 
-    mov    r10, rdi                    ; Store OG rdi in r10
-    mov    r11, rsi                    ; Store OG rsi in r11
+Spoof:
+    pop    %rax                         @ Real return address in rax
 
-    mov    rdi, qword ptr [rsp + 32]   ; Storing struct in rdi
-    mov    rsi, qword ptr [rsp + 40]   ; Storing function to call
+    mov    %rdi, %r10                   @ Store OG rdi in r10
+    mov    %rsi, %r11                   @ Store OG rsi in r11
 
-    ; ---------------------------------------------------------------------
-    ; Storing our original registers
-    ; ---------------------------------------------------------------------
+    mov    0x20(%rsp), %rdi             @ Storing struct in rdi
+    mov    0x28(%rsp), %rsi             @ Storing function to call
 
-    mov qword ptr [rdi + 24], r10       ; Storing OG rdi into param
-    mov qword ptr [rdi + 88], r11       ; Storing OG rsi into param
-    mov qword ptr [rdi + 96], r12       ; Storing OG r12 into param
-    mov qword ptr [rdi + 104], r13      ; Storing OG r13 into param
-    mov qword ptr [rdi + 112], r14      ; Storing OG r14 into param
-    mov qword ptr [rdi + 120], r15      ; Storing OG r15 into param
+    @ ---------------------------------------------------------------------
+    @ Storing our original registers
+    @ ---------------------------------------------------------------------
 
-    mov r12, rax                        ; OG code used r12 for ret addr
+    mov %r10, 0x18(%rdi)                @ Storing OG rdi into param
+    mov %r11, 0x58(%rdi)                @ Storing OG rsi into param
+    mov %r12, 0x60(%rdi)                @ Storing OG r12 into param
+    mov %r13, 0x68(%rdi)                @ Storing OG r13 into param
+    mov %r14, 0x70(%rdi)                @ Storing OG r14 into param
+    mov %r15, 0x78(%rdi)                @ Storing OG r15 into param
 
-    ; ---------------------------------------------------------------------
-    ; Prepping to move stack args
-    ; ---------------------------------------------------------------------
+    mov %rax, %r12                       @ OG code used r12 for ret addr
 
-    xor r11, r11                        ; r11 = # of args pushed
-    mov r13, qword ptr [rsp + 30h]      ; r13 = total args to push
+    @ ---------------------------------------------------------------------
+    @ Prepping to move stack args
+    @ ---------------------------------------------------------------------
 
-    mov r14, 200h                       ; Initial offset
-    add r14, 8
-    add r14, qword ptr [rdi + 56]       ; Add RUTS stack size
-    add r14, qword ptr [rdi + 48]       ; Add BTIT stack size
-    add r14, qword ptr [rdi + 32]       ; Add gadget frame size
-    sub r14, 20h                        ; Adjust for first stack arg
+    xor %r11, %r11                       @ r11 = # of args pushed
+    mov 0x30(%rsp), %r13                @ r13 = total args to push
 
-    mov r10, rsp            
-    add r10, 30h                        ; Stack args base address
+    mov $0x200, %r14                     @ Initial offset
+    add $8, %r14
+    add 0x38(%rdi), %r14                @ Add RUTS stack size
+    add 0x30(%rdi), %r14                @ Add BTIT stack size
+    add 0x20(%rdi), %r14                @ Add gadget frame size
+    sub $0x20, %r14                      @ Adjust for first stack arg
+
+    mov %rsp, %r10           
+    add $0x30, %r10                      @ Stack args base address
 
 looping_label:
-    xor r15, r15            
-    cmp r11, r13            
+    xor %r15, %r15           
+    cmp %r11, %r13           
     je finish_label
     
-    ; ---------------------------------------------------------------------
-    ; Calculate target stack position
-    ; ---------------------------------------------------------------------
-    sub r14, 8          
-    mov r15, rsp        
-    sub r15, r14        
+    @ ---------------------------------------------------------------------
+    @ Calculate target stack position
+    @ ---------------------------------------------------------------------
+    sub $8, %r14          
+    mov %rsp, %r15        
+    sub %r14, %r15        
     
-    ; ---------------------------------------------------------------------
-    ; Move stack argument
-    ; ---------------------------------------------------------------------
-    add r10, 8
-    push qword ptr [r10]
-    pop qword ptr [r15]     
+    @ ---------------------------------------------------------------------
+    @ Move stack argument
+    @ ---------------------------------------------------------------------
+    add $8, %r10
+    push (%r10)
+    pop (%r15)     
 
-    ; ---------------------------------------------------------------------
-    ; Increment counter and loop
-    ; ---------------------------------------------------------------------
-    add r11, 1
+    @ ---------------------------------------------------------------------
+    @ Increment counter and loop
+    @ ---------------------------------------------------------------------
+    add $1, %r11
     jmp looping_label
     
 finish_label:
 
-    ; ----------------------------------------------------------------------
-    ; Create working space and setup fake frames
-    ; ----------------------------------------------------------------------
-    sub    rsp, 200h
-    push   0
+    @ ----------------------------------------------------------------------
+    @ Create working space and setup fake frames
+    @ ----------------------------------------------------------------------
+    sub    $0x200, %rsp
+    push   $0
 
-    ; RtlUserThreadStart frame
-    sub    rsp, qword ptr [rdi + 56]
-    mov    r11, qword ptr [rdi + 64]
-    mov    qword ptr [rsp], r11
+    @ RtlUserThreadStart frame
+    sub    0x38(%rdi), %rsp
+    mov    0x40(%rdi), %r11
+    mov    %r11, (%rsp)
 
-    ; BaseThreadInitThunk frame
-    sub    rsp, qword ptr [rdi + 32]
-    mov    r11, qword ptr [rdi + 40]
-    mov    qword ptr [rsp], r11
+    @ BaseThreadInitThunk frame
+    sub    0x20(%rdi), %rsp
+    mov    0x28(%rdi), %r11
+    mov    %r11, (%rsp)
 
-    ; Gadget frame -- `jmp QWORD PTR [rbx]`
-    sub    rsp, qword ptr [rdi + 48]
-    mov    r11, qword ptr [rdi + 80]
-    mov    qword ptr [rsp], r11
+    @ Gadget frame -- `jmp QWORD PTR [rbx]`
+    sub    0x30(%rdi), %rsp
+    mov    0x50(%rdi), %r11
+    mov    %r11, (%rsp)
 
-    ; ----------------------------------------------------------------------
-    ; Prepare for function call and fixup
-    ; ----------------------------------------------------------------------
-    mov    r11, rsi                     ; Function to call
-    mov    qword ptr [rdi + 8], r12     ; Store real return address
-    mov    qword ptr [rdi + 16], rbx    ; Store original RBX
-    lea    rbx, fixup_label             ; Get fixup address
-    mov    qword ptr [rdi], rbx         ; Store fixup in struct
-    mov    rbx, rdi                     ; Param struct pointer
+    @ ----------------------------------------------------------------------
+    @ Prepare for function call and fixup
+    @ ----------------------------------------------------------------------
+    mov    %rsi, %r11                    @ Function to call
+    mov    %r12, 0x08(%rdi)              @ Store real return address
+    mov    %rbx, 0x10(%rdi)              @ Store original RBX
+    lea    fixup_label(%rip), %rbx       @ Get fixup address
+    mov    %rbx, (%rdi)                  @ Store fixup in struct
+    mov    %rdi, %rbx                    @ Param struct pointer
 
-    ; Prepare syscall (if needed)
-    mov    r10, rcx
-    mov    rax, qword ptr [rdi + 72]
+    @ Prepare syscall (if needed)
+    mov    %rcx, %r10
+    mov    0x48(%rdi), %rax
     
-    jmp    r11                          ; Jump to target function
+    jmp    *%r11                         @ Jump to target function
 
 fixup_label: 
-    mov    rcx, rbx                     ; Restore param struct
+    mov    %rbx, %rcx                    @ Restore param struct
 
-    ; Cleanup stack frames
-    add    rsp, 200h
-    add    rsp, qword ptr [rbx + 48]
-    add    rsp, qword ptr [rbx + 32]
-    add    rsp, qword ptr [rbx + 56]
+    @ Cleanup stack frames
+    add    $0x200, %rsp
+    add    0x30(%rbx), %rsp
+    add    0x20(%rbx), %rsp
+    add    0x38(%rbx), %rsp
 
-    ; Restore original registers
-    mov    rbx, qword ptr [rcx + 16]
-    mov    rdi, qword ptr [rcx + 24]
-    mov    rsi, qword ptr [rcx + 88]
-    mov    r12, qword ptr [rcx + 96]
-    mov    r13, qword ptr [rcx + 104]
-    mov    r14, qword ptr [rcx + 112]
-    mov    r15, qword ptr [rcx + 120]
+    @ Restore original registers
+    mov    0x10(%rcx), %rbx
+    mov    0x18(%rcx), %rdi
+    mov    0x58(%rcx), %rsi
+    mov    0x60(%rcx), %r12
+    mov    0x68(%rcx), %r13
+    mov    0x70(%rcx), %r14
+    mov    0x78(%rcx), %r15
 
-    jmp    qword ptr [rcx + 8]          ; Jump to original return address
-
-Spoof ENDP
-
-END
+    jmp    *0x08(%rcx)                   @ Jump to original return address
